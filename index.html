@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c294096621.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm fftop</h1>
+                <p>Student in Zurich</p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/portrait.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec varius urna leo, eu finibus metus molestie vitae. 
+                        Aenean ut pellentesque augue. Nulla tincidunt porttitor 
+                        tellus, sit amet malesuada mauris tempus non. Maecenas 
+                        non vestibulum lacus. Sed ante risus, sagittis mollis euismod sed, 
+                        consequat eu est. Suspendisse in malesuada nisl. Fusce nec quam 
+                        ac libero tristique laoreet id sed libero. Nulla consequat velit 
+                        at sapien suscipit, sit amet aliquet augue scelerisque. Mauris 
+                        volutpat at nisl at auctor. Nunc augue mauris, bibendum id ligula 
+                        in, vulputate cursus tellus.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Java</span><br>building applications in Java</li>
+                                <li><span>JavaScript</span><br>basic knowledge in JavaScript / PhP / Python</li>
+                                <li><span>PHP</span><br>basic knowledge in HTML / CSS</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2020 - Current</span><br>Apprenticeship computer scientist EFZ in Zurich</li>
+                                <li><span>2017 - 2020</span><br>secondary school</li>
+                                <li><span>2011 - 2017</span><br>primary school</li>
+                            </ul>
+                    
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <ul>
+                                    <li><span>2019 - Zurich, Schlieren</span><br>one-week trial apprenticeship in the backup datacenter of zurich insurance</li>
+                                </ul>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="projects">
+        <div class="container">
+            <h1 class="subtitle">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work1.png">
+                    <div class="layer">
+                        <h3>Chess</h3>
+                        <p>A fully functional Chess, playable with another Person on the same device.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work2.png">
+                    <div class="layer">
+                        <h3>Tic-Tac-Toe</h3>
+                        <p>Tic-Tac-Toe, playable with a friend on the same device.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.png">
+                    <div class="layer">
+                        <h3>Notenrechner</h3>
+                        <p>Notenrechner Programm, um sämtliche Noten eines Schulsemesters zu verwalten.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work3.png">
+                    <div class="layer">
+                        <h3>Military Ranking</h3>
+                        <p>Program to manage different military vehicles. Web-App build with java restful webservice.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.png">
+                    <div class="layer">
+                        <h3>LB02-Projet</h3>
+                        <p>Programm zur Vergleichung von verschiedenen Sortieralgorithmen. (Schulprojekt Oktober 2021)</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work3.png">
+                    <div class="layer">
+                        <h3>coming soon</h3>
+                        <p></p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> fftop-dev.ufedf@simplelogin.com</p>
+                    
+                    <div class="social-icon">
+                        <a href="https://github.com/fftop-dev"><i class="fa-brands fa-square-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form >
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <p>Copyright © fftop. Made by fftop-dev</p>
+        </div>
+    </div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+
+</script>
+
+</body>
+</html>
