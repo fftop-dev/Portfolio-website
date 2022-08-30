@@ -13,15 +13,17 @@
         <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i id="icon2" class="fa-solid fa-arrow-right" onclick="closemenu()"></i>
                 </ul>
+                <i id="icon1" class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <h1>Hi, I'm fftop</h1>
+                <h1>Hi, I'm <span id="name">fftop</span></h1>
                 <p>Student in Zurich</p>
                 
             </div>
@@ -31,7 +33,8 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/portrait.png" alt="">
+                 
+                    <i id="portrait-icon" class="fa-solid fa-person"></i>
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
@@ -86,49 +89,49 @@
             <h1 class="subtitle">My Projects</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="images/work1.png">
+                    <img src="images/project_1.png">
                     <div class="layer">
                         <h3>Chess</h3>
                         <p>A fully functional Chess, playable with another Person on the same device.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/fftop-dev/Chess"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work2.png">
+                    <img src="images/project_2.png">
                     <div class="layer">
                         <h3>Tic-Tac-Toe</h3>
                         <p>Tic-Tac-Toe, playable with a friend on the same device.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/fftop-dev/Tic-Tac-Toe"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work3.png">
+                    <img src="images/project_3.png">
                     <div class="layer">
                         <h3>Notenrechner</h3>
                         <p>Notenrechner Programm, um sämtliche Noten eines Schulsemesters zu verwalten.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/fftop-dev/Notenrechner"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
             <div class="work-list">
                 <div class="work">
-                    <img src="images/work3.png">
+                    <img src="images/project_temp.png">
                     <div class="layer">
-                        <h3>Military Ranking</h3>
-                        <p>Program to manage different military vehicles. Web-App build with java restful webservice.</p>
+                        <h3>coming soon</h3>
+                        <p></p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work3.png">
+                    <img src="images/project_temp.png">
                     <div class="layer">
-                        <h3>LB02-Projet</h3>
-                        <p>Programm zur Vergleichung von verschiedenen Sortieralgorithmen. (Schulprojekt Oktober 2021)</p>
+                        <h3>coming soon</h3>
+                        <p></p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work3.png">
+                    <img src="images/project_temp.png">
                     <div class="layer">
                         <h3>coming soon</h3>
                         <p></p>
@@ -144,10 +147,6 @@
                 <div class="contact-left">
                     <h1 class="subtitle">Contact Me</h1>
                     <p><i class="fa-solid fa-envelope"></i> fftop-dev.ufedf@simplelogin.com</p>
-                    
-                    <div class="social-icon">
-                        <a href="https://github.com/fftop-dev"><i class="fa-brands fa-square-github"></i></a>
-                    </div>
                 </div>
                 <div class="contact-right">
                     <form >
@@ -180,7 +179,16 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
 
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
 </script>
 
 </body>
