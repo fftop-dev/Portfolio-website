@@ -1,3 +1,25 @@
+<?php 
+if(isset($_POST['submit'])){
+    $name = htmlspecialchars($_POST['Name']);
+    $mailFrom = htmlspecialchars($_POST['Email']);
+    $message = htmlspecialchars($_POST['Message']);
+
+    if (empty(trim($name))) $error = "empty name";
+    if (empty(trim($mailFrom))) $error = "empty mail";
+    if (empty(trim($message))) $error = "empty message";
+
+    if (!isset($error)) {
+        $mailTo = "fftop-dev.ufedf@simplelogin.com";
+        $headers = "From: ".$mailFrom;
+        $text = "Du hast eine Email von ".$name." erhalten. \n\n".$message;
+        
+        mail($mailTo, $message, $headers);
+        header("Location: index.php?mailsend");
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +31,7 @@
     <script src="https://kit.fontawesome.com/c294096621.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?= isset($error) ? $error : '' ?>
     <div id="header">
         <div class="container">
             <nav>
@@ -38,16 +61,12 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Donec varius urna leo, eu finibus metus molestie vitae. 
-                        Aenean ut pellentesque augue. Nulla tincidunt porttitor 
-                        tellus, sit amet malesuada mauris tempus non. Maecenas 
-                        non vestibulum lacus. Sed ante risus, sagittis mollis euismod sed, 
-                        consequat eu est. Suspendisse in malesuada nisl. Fusce nec quam 
-                        ac libero tristique laoreet id sed libero. Nulla consequat velit 
-                        at sapien suscipit, sit amet aliquet augue scelerisque. Mauris 
-                        volutpat at nisl at auctor. Nunc augue mauris, bibendum id ligula 
-                        in, vulputate cursus tellus.</p>
+                    <p id="about-me-text">I am a motivated student at the Kantonsschule Hottingen in Zurich. 
+                        At the moment, I am in the third year of my apprenticeship as an 
+                        application developer EFZ and in the middle of my internship 
+                        search. My main interests have been computer science and especially 
+                        programming for a long time. In my free time I like to play video games, 
+                        or try to learn new things in the world of computer sience.</p>
 
                         <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -57,9 +76,9 @@
 
                         <div class="tab-contents active-tab" id="skills">
                             <ul>
-                                <li><span>Java</span><br>building applications in Java</li>
-                                <li><span>JavaScript</span><br>basic knowledge in JavaScript / PhP / Python</li>
-                                <li><span>PHP</span><br>basic knowledge in HTML / CSS</li>
+                                <li><span>Main language</span><br>building applications in Java</li>
+                                <li><span>Side language</span><br>basic knowledge in JavaScript, php, Python</li>
+                                <li><span>Other</span><br>basic knowledge in HTML & CSS, MySQL</li>
                             </ul>
                         </div>
 
@@ -95,7 +114,7 @@
                     <img src="images/project_1.png">
                     <div class="layer">
                         <h3>Chess</h3>
-                        <p>A fully functional Chess, playable with another Person on the same device.</p>
+                        <p class="project-text">A fully functional Chess, playable with another Person on the same device.</p>
                         <a href="https://github.com/fftop-dev/Chess"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -103,7 +122,7 @@
                     <img src="images/project_2.png">
                     <div class="layer">
                         <h3>Tic-Tac-Toe</h3>
-                        <p>Tic-Tac-Toe, playable with a friend on the same device.</p>
+                        <p class="project-text">Tic-Tac-Toe, playable with a friend on the same device.</p>
                         <a href="https://github.com/fftop-dev/Tic-Tac-Toe"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -111,7 +130,7 @@
                     <img src="images/project_3.png">
                     <div class="layer">
                         <h3>Notenrechner</h3>
-                        <p>Notenrechner Programm, um sämtliche Noten eines Schulsemesters zu verwalten.</p>
+                        <p class="project-text">Notenrechner, um sämtliche Noten eines Schulsemesters zu verwalten.</p>
                         <a href="https://github.com/fftop-dev/Notenrechner"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -121,7 +140,7 @@
                     <img src="images/project_temp.png">
                     <div class="layer">
                         <h3>coming soon</h3>
-                        <p></p>
+                        <p class="project-text"></p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -129,7 +148,7 @@
                     <img src="images/project_temp.png">
                     <div class="layer">
                         <h3>coming soon</h3>
-                        <p></p>
+                        <p class="project-text"></p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -137,7 +156,7 @@
                     <img src="images/project_temp.png">
                     <div class="layer">
                         <h3>coming soon</h3>
-                        <p></p>
+                        <p class="project-text"></p>
                         <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -152,11 +171,11 @@
                     <p><i class="fa-solid fa-envelope"></i> fftop-dev.ufedf@simplelogin.com</p>
                 </div>
                 <div class="contact-right">
-                    <form >
+                    <form method="POST" action="index.php">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                        <button type="submit" class="btn btn2" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -193,6 +212,7 @@
         sidemenu.style.right = "-200px";
     }
 </script>
+
 
 </body>
 </html>

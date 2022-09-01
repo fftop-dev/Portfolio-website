@@ -90,7 +90,7 @@ nav ul li a:hover::after{
 }
 .about-col-2 p{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 24px;
 }
 .subtitle{
     font-size: 60px;
@@ -135,9 +135,8 @@ nav ul li a:hover::after{
 }
 .tab-contents{
     margin-top: 30px;
-}
-.tab-contents{
     display: none;
+    font-size: 22px;
 }
 .tab-contents.active-tab{
     display: block;
@@ -146,9 +145,13 @@ nav ul li a:hover::after{
 #portrait-icon{
     display: block;
     margin-left: 75px;
-    margin-top: 5px;
+    margin-top: 30px;
     font-size: 500px;
     color: #262626;
+}
+#about-me-text{
+    text-align: justify;
+    font-size: 23px;
 }
 /*My Projects*/
 #projects{
@@ -303,6 +306,17 @@ nav .fa{
     display: block;
 }
 @media only screen and (max-width: 600px){
+    .about-col-2 p{
+        font-size: 22px;
+    }
+    .tab-contents{
+        font-size: 16px;
+    }
+    #about-me-text{
+        /*text-align: left;*/
+        font-size: 16px;
+        margin-right: 20px;
+    }
     .header-text{
         margin-top: 100%;
         font-size: 16px;
